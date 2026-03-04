@@ -26,6 +26,5 @@ changelog: Hclient Rust Version is now under development.
                 changed logo (bigger one caused issues on bigger terminals)
                 (in development) - added an install requirements feature
                 (in development) - bug fixes
-                (in development) - changed code structure
+                changed code structure
                 added a gitignore so new releases doesnt include useless garbage
-                (in development) - added windows support
