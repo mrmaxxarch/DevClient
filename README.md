@@ -21,10 +21,12 @@ changelog: Hclient Rust Version is now under development.
                 refined btcaddressgen to be more precise on address types and formatting
                 the Windows version will releasing one week after this release (or less i hope) cuz im on vacation and currently does not have my Windows pc here. for now, this version is not gonna be published as a github release yet.
                 the full release (UNIX + NT) is out now!
-            (pre relase, changes appeared only on src file) - DevClient 1.3.0:
+            UNSTABLE - DevClient 1.3.0:
                 renamed to "DevClient"
                 changed logo (bigger one caused issues on bigger terminals)
-                (in development) - added an install requirements feature
-                (in development) - bug fixes
+                added an install requirements feature
                 changed code structure
                 added a gitignore so new releases doesnt include useless garbage
+                deleted other fetches and decided to use only fastfetch for more compatibility
+                unstable release, need to fix some things
+                starting to reconsider about windows support :(

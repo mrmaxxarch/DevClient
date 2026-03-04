@@ -20,7 +20,8 @@ fn main() {
     println!();
     println!("NOTE: some features only work on UNIX like or UNIX based system!");
     println!();
-    println!("select an option: 1 = passgen, 2 = btcadressgen, 3 = cardnumbergen, 4 = nmap local ip scan, 5 = system information, 6 = pkg updater");
+    println!("select an option: 1 = passgen, 2 = btcadressgen, 3 = cardnumbergen, 4 = nmap local ip scan");
+    println!("                  5 = system information, 6 = pkg updater, 7 = install requirements");
     println!();    
     let mut user_first_prompt_choice = String::new();
     io::stdin().read_line(&mut user_first_prompt_choice).expect("failed to read line");
@@ -55,6 +56,11 @@ fn main() {
     // PACKAGE UPDATER
     else if user_first_prompt_choice_f == 6 {
         pacupd();
+    }
+
+    // INSTALL REQUIREMENTS
+    else if user_first_prompt_choice_f == 7 {
+        instreq();
     }
     
     // END
@@ -335,75 +341,16 @@ fn nmap() {
 }
 
 fn sysinfo() {
-    // SYSTEM INFORMATION - FETCH TYPE
-    println!("select fetch type: 1 = neofetch, 2 = fastfetch, 3 = macchina, 4 = hyfetch");
-    println!();
-    let mut user_fetch_type = String::new();
-    io::stdin().read_line(&mut user_fetch_type).expect("failed to read line");
-    let user_fetch_type_f: i32 = user_fetch_type.trim().parse().unwrap();
-    println!();
-        
-    // SYSTEM INFORMATION - NEOFETCH
-    if user_fetch_type_f == 1 {
-        let mut sh = Command::new("sh");
-        sh.arg("neofetch.sh");
-        match sh.output() {
-            Ok(o) => {
-                unsafe {
-                    println!("{}", String::from_utf8_unchecked(o.stdout));
-                }
-            }
-            Err(e) => {
-                println!("{}",e);
+    let mut sh = Command::new("sh");
+    sh.arg("fastfetch.sh");
+    match sh.output() {
+        Ok(o) => {
+            unsafe {
+                println!("{}", String::from_utf8_unchecked(o.stdout));
             }
         }
-    }
-        
-    // SYSTEM INFORMATION - FASTFETCH
-    else if user_fetch_type_f == 2 {
-        let mut sh = Command::new("sh");
-        sh.arg("fastfetch.sh");
-        match sh.output() {
-            Ok(o) => {
-                unsafe {
-                    println!("{}", String::from_utf8_unchecked(o.stdout));
-                }
-            }
-            Err(e) => {
-                println!("{}",e);
-            }
-        }
-    }
-        
-    // SYSTEM INFORMATION - MACCHINA
-    else if user_fetch_type_f == 3 {
-        let mut sh = Command::new("sh");
-        sh.arg("macchina.sh");
-        match sh.output() {
-            Ok(o) => {
-                unsafe {
-                    println!("{}", String::from_utf8_unchecked(o.stdout));
-                }
-            }
-            Err(e) => {
-                println!("{}",e);
-            }
-        }
-    } 
-        
-    // SYSTEM INFORMATION - HYFETCH
-    else if user_fetch_type_f == 4 {
-        let mut sh = Command::new("sh");
-        sh.arg("hyfetch.sh");
-        match sh.output() {
-            Ok(o) => {
-                unsafe {
-                    println!("{}", String::from_utf8_unchecked(o.stdout));
-                }
-            }
-            Err(e) => {
-                println!("{}",e);
-            }
+        Err(e) => {
+            println!("{}",e);
         }
     }
 }
@@ -453,6 +400,57 @@ fn pacupd () {
     else if user_package_manager_f == 3 {
         let mut sh = Command::new("sh");
         sh.arg("pacman.sh");
+        match sh.output() {
+            Ok(o) => {
+                unsafe {
+                    println!("{}", String::from_utf8_unchecked(o.stdout));
+                }
+            }
+            Err(e) => {
+                println!("{}",e);
+            }
+        }
+    }
+}
+
+fn instreq() {
+    let mut user_package_manager = String::new();
+    println!("enter package manager: 1 = apt, 2 = dnf, 3 = pacman");
+    io::stdin().read_line(&mut user_package_manager).expect("failed to read line");
+    let user_package_manager_f:i32 = user_package_manager.trim().parse().unwrap();
+    if user_package_manager_f == 1 {
+        let mut sh = Command::new("sh");
+        sh.arg("installrequirements-apt.sh");
+        match sh.output() {
+            Ok(o) => {
+                unsafe {
+                    println!("{}", String::from_utf8_unchecked(o.stdout));
+                }
+            }
+            Err(e) => {
+                println!("{}",e);
+            }
+        }
+    }
+
+    else if user_package_manager_f == 2 {
+        let mut sh = Command::new("sh");
+        sh.arg("installrequirements-dnf.sh");
+        match sh.output() {
+            Ok(o) => {
+                unsafe {
+                    println!("{}", String::from_utf8_unchecked(o.stdout));
+                }
+            }
+            Err(e) => {
+                println!("{}",e);
+            }
+        }
+    }
+
+    else if user_package_manager_f == 3 {
+        let mut sh = Command::new("sh");
+        sh.arg("installrequirements-pacman.sh");
         match sh.output() {
             Ok(o) => {
                 unsafe {
