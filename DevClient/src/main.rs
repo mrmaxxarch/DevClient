@@ -223,7 +223,7 @@ fn btcadressgen() {
     }
 }
 
-fn cardnumbergen() {
+fn cardnumbergen() { //FIX
     let cardnumbergen_card_number_1 = rand::thread_rng().gen_range(000..999);
     let cardnumbergen_card_number_2 = rand::thread_rng().gen_range(0000..9999);
     let cardnumbergen_card_number_3 = rand::thread_rng().gen_range(0000..9999);

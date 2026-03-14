@@ -30,3 +30,6 @@ changelog: Hclient Rust Version is now under development.
                 deleted other fetches and decided to use only fastfetch for more compatibility
                 unstable release, need to fix some things
                 starting to reconsider about windows support :(
+            (in development) - DevClient 1.3.1:
+                (in development) - bug fixes: cardnumbergen fix
+                (in development) - added debug status before text
