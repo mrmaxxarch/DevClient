@@ -1,4 +1,4 @@
-// COPYRIGHT: DevClient, a CLI multi tool rust program for general tech purposes.    Copyright (C) 2025  Kevin De Togni, MKlabs
+// COPYRIGHT: DevClient, a CLI multi tool rust program for general tech purposes.    Copyright (C) 2025  Kevin De Togni, mrmaxxarch
 // LICENSE: distribuited on the GNU general public license 3.0v license
 // CRATES
 use std::io;
@@ -9,7 +9,7 @@ use std::process::Command;
 fn main() {
     
     // LOGO, CREDITS AND FIST PROMPT
-    println!("DevClient, a CLI multi tool rust program for general tech purposes.    Copyright (C) 2025  Kevin De Togni, MKlabs");
+    println!("DevClient, a CLI multi tool rust program for general tech purposes.    Copyright (C) 2025  Kevin De Togni, mrmaxxarch");
     println!("distribuited on the GNU general public license 3.0v license");
     println!();
     println!("      ____             ____ ");

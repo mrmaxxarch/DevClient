@@ -33,3 +33,7 @@ changelog: Hclient Rust Version is now under development.
             (in development) - DevClient 1.3.1:
                 (in development) - bug fixes: cardnumbergen fix
                 (in development) - added debug status before text
+                (in development) - added and installer feature
+                changed repo owner (reason: MKlabs disbandment due to members inactivity)
+                now DevClient and Hclien will pass from "MKlabs" to "mrmaxxarch" name
+                owner conversion is still in progress some naming changes will be plushed in next release
