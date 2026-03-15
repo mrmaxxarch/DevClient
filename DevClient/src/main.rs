@@ -16,7 +16,7 @@ fn main() {
     println!("     /   /            /  _/");
     println!("  __/   /____ __  __ /  /     __   __ ____   _  __ _____");
     println!(" / __  // _ /_\\ \\/ / \\  \\___ / /_ / // _ /_ / \\/ //_  _/");
-    println!("/_____/ \\____/ \\__/   \\r___//___//_/ \\____//_/\\_/  /_/");
+    println!("/_____/ \\____/ \\__/   \\r___//___//_/ \\____//_/\\_/  /_/  ©");
     println!();
     println!("NOTE: some features only work on UNIX like or UNIX based system!");
     println!();
