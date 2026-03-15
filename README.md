@@ -1,9 +1,9 @@
 # DevClient
 distribuited on the GNU general public license 3.0v license
 
-DevClient: a CLI multitool app developed by the MK labs developer team, please do not steal and put the MKlabs Veneto official tag on the republished copy, do not use for malicious intent, we do not take any responsability for the damage done (this is an app to learn how things work in the simple not some professional military grade hacking tool). MKlabs Veneto official website: https://officialmklabsveneto.netlify.app
+DevClient: a CLI multitool app developed by MaxX, please do not steal and put the "mrmaxxarch" tag on the republished copy, do not use for malicious intent, i do not take any responsability for the damage done (this is an app to learn how things work in the simple not some professional military grade hacking tool).
 
-developers: MrMaxX
+developers: MaxX
 current version: 1.2.1
 
 requirements: UNIX like/based systems (for some features), a fetch type like neofetch/fastfetch/macchina/hyfetch installed and nmap installed
