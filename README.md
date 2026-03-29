@@ -43,3 +43,5 @@ changelog: Hclient Rust Version is now under development.
                 changed repo owner (reason: MKlabs disbandment due to members inactivity)
                 now DevClient and Hclient will pass from "MKlabs" to "mrmaxxarch" name
                 owner conversion is still in progress some naming changes will be published in next release
+            (not in development yet) DevClient 1.5.0:
+                (not in development yet) refined variables name
