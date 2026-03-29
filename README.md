@@ -4,7 +4,8 @@ distribuited on the GNU general public license 3.0v license
 DevClient: a CLI multitool app developed by MaxX, please do not steal and put the "mrmaxxarch" tag on the republished copy, do not use for malicious intent, i do not take any responsability for the damage done (this is an app to learn how things work in the simple not some professional military grade hacking tool).
 
 developers: MaxX
-current version: 1.2.1
+current version: 1.4.0
+current stable version: 1.4.0
 
 requirements: UNIX like/based systems (for some features), a fetch type like neofetch/fastfetch/macchina/hyfetch installed and nmap installed
 
@@ -30,10 +31,15 @@ changelog: Hclient Rust Version is now under development.
                 deleted other fetches and decided to use only fastfetch for more compatibility
                 unstable release, need to fix some things
                 starting to reconsider about windows support :(
-            (in development) - DevClient 1.3.1:
+            DevClient 1.4.0:
                 (in development) - bug fixes: cardnumbergen fix
-                (in development) - added debug status before text
-                (in development) - added and installer feature
+                added debug status before text
+                added and installer feature
+                shifted the "install requirement" script from the app to the installer shell script to make the code lighter and simpler
+                to install DevClient just make installer.sh executable and run it, to uninstall
+                make uninstaller.sh executable and run it (dependencies will not be removed)
+                if you want to modify the source code and install it to the shell run the uninstaller, remove the old binary, put the new compiled binary you modified into the APP folder and then run the installer
+                now you can run DevClient by typing "devclient" into the terminal (you must run the installer before)
                 changed repo owner (reason: MKlabs disbandment due to members inactivity)
-                now DevClient and Hclien will pass from "MKlabs" to "mrmaxxarch" name
-                owner conversion is still in progress some naming changes will be plushed in next release
+                now DevClient and Hclient will pass from "MKlabs" to "mrmaxxarch" name
+                owner conversion is still in progress some naming changes will be published in next release
