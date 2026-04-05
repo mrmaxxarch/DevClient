@@ -47,4 +47,5 @@ changelog: Hclient Rust Version is now under development.
                 owner conversion is still in progress some naming changes will be published in next release
             (in development) DevClient 1.5.0:
                 (in development) refined variables name
+                (in development) fixed warranty headers than were not compliant to the GNU/GPL license
                 planning to do other stuff not just this...
