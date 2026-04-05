@@ -9,6 +9,8 @@ current stable version: 1.4.0
 
 requirements: UNIX like/based systems (for some features), a fetch type like neofetch/fastfetch/macchina/hyfetch installed and nmap installed
 
+planning to rename DevClient to MXtool for 2.0 update in the future
+
 changelog: Hclient Rust Version is now under development.
            Hclient Rust Version 1.0.0 APP is out now! but with a sad new: for now cardnumbergen will not be avaible since it goes beyond my current skills but i will develop it soon.
             Hclient 1.1.0:
