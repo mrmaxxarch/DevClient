@@ -20,41 +20,41 @@ fn main() {
     println!();
     println!("[ INFO ]: some features only work on UNIX like or UNIX based system!");
     println!();
-    println!("[ CONSOLE ]: select an option: 1 = PasswordGenerator, 2 = BitcoinAddressGenerator, 3 = cardnumbergen");
+    println!("[ CONSOLE ]: select an option: 1 = passgen, 2 = btcadressgen, 3 = cardnumbergen");
     println!("                               4 = nmap local ip scan, 5 = system information, 6 = pkg updater");
     println!();    
-    let mut UserFirstPromptChoice = String::new();
-    io::stdin().read_line(&mut UserFirstPromptChoice).expect("failed to read line");
-    let UserFirstPromptChoiceF: i32 = UserFirstPromptChoice.trim().parse().unwrap();
+    let mut user_first_prompt_choice = String::new();
+    io::stdin().read_line(&mut user_first_prompt_choice).expect("failed to read line");
+    let user_first_prompt_choice_f: i32 = user_first_prompt_choice.trim().parse().unwrap();
     println!();
     
     // PASSGEN
-    if UserFirstPromptChoiceF == 1 {
-        PasswordGenerator();
+    if user_first_prompt_choice_f == 1 {
+        passgen();
     }
     
     // BTCADDRESSGEN
-    else if UserFirstPromptChoiceF == 2 {
-        BitcoinAddressGenerator();
+    else if user_first_prompt_choice_f == 2 {
+        btcadressgen();
     }
     
     // CARDNUMBERGEN (in develpment)
-    else if UserFirstPromptChoiceF == 3 {
+    else if user_first_prompt_choice_f == 3 {
         cardnumbergen();
     }
     
     // NMAP LOCAL IP SCAN
-    else if UserFirstPromptChoiceF == 4 {
+    else if user_first_prompt_choice_f == 4 {
         nmap();
     }
 
     // SYSTEM INFORMATION
-    else if UserFirstPromptChoiceF == 5 {
+    else if user_first_prompt_choice_f == 5 {
         sysinfo();
     }
     
     // PACKAGE UPDATER
-    else if UserFirstPromptChoiceF == 6 {
+    else if user_first_prompt_choice_f == 6 {
         pacupd();
     }
     // END
@@ -64,36 +64,36 @@ fn main() {
     io::stdin().read_line(&mut end).expect("failed to read line");
 }
 
-fn PasswordGenerator() {
+fn passgen() {
     // PASSGEN - TYPE OF PASSWORDS
     println!("[ CONSOLE ]: what type of passwords do you want to generate? 1 = numbers only, 2 = letters only, 3 = numbers and letters");
     println!();
-    let mut UserPasswordGeneratorChoice: String = String::new();
-    io::stdin().read_line(&mut UserPasswordGeneratorChoice).expect("failed to read line");
-    let UserPasswordGeneratorChoiceF: i32 = UserPasswordGeneratorChoice.trim().parse().unwrap();
+    let mut user_passgen_choice: String = String::new();
+    io::stdin().read_line(&mut user_passgen_choice).expect("failed to read line");
+    let user_passgen_choice_f: i32 = user_passgen_choice.trim().parse().unwrap();
         
     // PASSGEN - NUMBER OF PASSWORDS
     println!();
     println!("[ CONSOLE ]: how many passwords do you want to generate?");
     println!();
-    let mut UserPasswordGeneratorPasswordNumberChoice = String::new();
-    io::stdin().read_line(&mut UserPasswordGeneratorPasswordNumberChoice).expect("failed to read input");
-    let UserPasswordGeneratorPasswordNumberChoiceF: i32 = UserPasswordGeneratorPasswordNumberChoice.trim().parse().unwrap();
+    let mut user_passgen_password_number_choice = String::new();
+    io::stdin().read_line(&mut user_passgen_password_number_choice).expect("failed to read input");
+    let user_passgen_password_number_choice_f: i32 = user_passgen_password_number_choice.trim().parse().unwrap();
     println!();
         
     // PASSGEN - LENGTH OF PASSWORDS
     println!("[ CONSOLE ]: how long do you want them to be?");
     println!();
-    let mut UserPasswordGeneratorPasswordLenghtChoice = String::new();
-    io::stdin().read_line(&mut UserPasswordGeneratorPasswordLenghtChoice).expect("failed to read line");
-    let UserPasswordGeneratorPasswordLenghtChoiceF = UserPasswordGeneratorPasswordLenghtChoice.trim().parse().unwrap();
+    let mut user_passgen_password_lenght_choice = String::new();
+    io::stdin().read_line(&mut user_passgen_password_lenght_choice).expect("failed to read line");
+    let user_passgen_password_lenght_choice_f = user_passgen_password_lenght_choice.trim().parse().unwrap();
     println!();
         
     // PASSGEN - NUMBERS ONLY
-    if UserPasswordGeneratorChoiceF == 1 {
-        for _i in 0..UserPasswordGeneratorPasswordNumberChoiceF {
+    if user_passgen_choice_f == 1 {
+        for _i in 0..user_passgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
-            for _ in 0..UserPasswordGeneratorPasswordLenghtChoiceF {
+            for _ in 0..user_passgen_password_lenght_choice_f {
                 let  rng = rand::thread_rng().gen_range(0..=9);
                 print!("{}", rng);
             }
@@ -102,13 +102,13 @@ fn PasswordGenerator() {
     }
         
     // PASSGEN - LETTERS ONLY
-    else if UserPasswordGeneratorChoiceF == 2 {
+    else if user_passgen_choice_f == 2 {
         let letters = b"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
         let  mut rng = rand::thread_rng();
         println!();
-        for _i in 0..UserPasswordGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_passgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
-            let password_letters_only: String = (0..UserPasswordGeneratorPasswordLenghtChoiceF).map(|_| {
+            let password_letters_only: String = (0..user_passgen_password_lenght_choice_f).map(|_| {
                 let idx = rng.gen_range(0..letters.len());
                 letters[idx] as char
             })
@@ -118,34 +118,34 @@ fn PasswordGenerator() {
     }
         
     // PASSGEN - NUMBERS AND LETTERS
-    else if UserPasswordGeneratorChoiceF == 3 {
-        let LettersAndNumbers = b"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+    else if user_passgen_choice_f == 3 {
+        let letters_and_numbers = b"qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
         let mut rng = rand::thread_rng();
         println!();
-        for _i in 0..UserPasswordGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_passgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
-            let PasswordLettersAndNumbers: String = (0..UserPasswordGeneratorPasswordLenghtChoiceF).map(|_| {
-                let idx = rng.gen_range(0..LettersAndNumbers.len());
-                LettersAndNumbers[idx] as char
+            let password_letters_and_numbers: String = (0..user_passgen_password_lenght_choice_f).map(|_| {
+                let idx = rng.gen_range(0..letters_and_numbers.len());
+                letters_and_numbers[idx] as char
             })
             .collect();
-            println!("{}", PasswordLettersAndNumbers);
+            println!("{}", password_letters_and_numbers);
         }
     }
 }
 
-fn BitcoinAddressGenerator() {
+fn btcadressgen() {
     // BTCADDRESSGEN - NUMBER OF ADDRESSES
     println!("[ CONSOLE ]: how many adresses do you want to generate?");
     println!();
-    let mut UserBitcoinAddressGeneratorPasswordNumberChoice = String::new();
-    io::stdin().read_line(&mut UserBitcoinAddressGeneratorPasswordNumberChoice).expect("failed to read line");
-    let UserBitcoinAddressGeneratorPasswordNumberChoiceF: i32 = UserBitcoinAddressGeneratorPasswordNumberChoice.trim().parse().unwrap();
+    let mut user_btcaddressgen_password_number_choice = String::new();
+    io::stdin().read_line(&mut user_btcaddressgen_password_number_choice).expect("failed to read line");
+    let user_btcaddressgen_password_number_choice_f: i32 = user_btcaddressgen_password_number_choice.trim().parse().unwrap();
     let mut rng = rand::thread_rng();
     println!();
         
     // BTCADDRESSGEN - ADDRESS TYPE
-    let CharactersBase58 = b"123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+    let characters_base58 = b"123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
     let characters_bech32 = b"qpzry9x8gf2tvdw0s3jn54khce6mua7l";
     println!("[ CONSOLE ]: what type do you wanna use? 1 = Legacy (P2PKH), 2 = P2SH, 3 = Bech32 (P2WPKH), 4 = Bech32 (P2WSH), 5 = Bech32m (Taproot)");
     println!();
@@ -156,12 +156,12 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - LEGACY (P2PKH)
     if user_bitcoin_type_choice_f == 1 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_btcaddressgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
             print!("1");
             let random_adddres_base58: String = (0..=34).map(|_| {
-                let idx = rng.gen_range(0..CharactersBase58.len());
-                CharactersBase58[idx] as char
+                let idx = rng.gen_range(0..characters_base58.len());
+                characters_base58[idx] as char
             })
             .collect();
             println!("{}", random_adddres_base58);
@@ -170,12 +170,12 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - P2SH
     if user_bitcoin_type_choice_f == 2 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_btcaddressgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
             print!("3");
             let random_adddres_base58: String = (0..=34).map(|_| {
-                let idx = rng.gen_range(0..CharactersBase58.len());
-                CharactersBase58[idx] as char
+                let idx = rng.gen_range(0..characters_base58.len());
+                characters_base58[idx] as char
             })
             .collect();
             println!("{}", random_adddres_base58);
@@ -184,7 +184,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32 (P2WPKH)
     if user_bitcoin_type_choice_f == 3 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_btcaddressgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
             print!("bc1");
             let random_adddres_bech32: String = (0..=39).map(|_| {
@@ -198,7 +198,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32 (P2WSH)
     if user_bitcoin_type_choice_f == 4 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_btcaddressgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
             print!("bc1");
             let random_adddres_bech32: String = (0..=59).map(|_| {
@@ -212,7 +212,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32M (TAPROOT)
     if user_bitcoin_type_choice_f == 5 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
+        for _i in 0..user_btcaddressgen_password_number_choice_f {
             print!("[ OUTPUT ]: ");
             print!("bc1p");
             let random_adddres_bech32: String = (0..=58).map(|_| {
