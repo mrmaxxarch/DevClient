@@ -140,13 +140,12 @@ fn BitcoinAddressGenerator() {
     println!();
     let mut UserBitcoinAddressGeneratorPasswordNumberChoice = String::new();
     io::stdin().read_line(&mut UserBitcoinAddressGeneratorPasswordNumberChoice).expect("failed to read line");
-// FIX: restart variables replacing from here with sed command
-    let UserBitcoinAddressGeneratorPasswordNumberChoice_f: i32 = UserBitcoinAddressGeneratorPasswordNumberChoice.trim().parse().unwrap();
+    let UserBitcoinAddressGeneratorPasswordNumberChoiceF: i32 = UserBitcoinAddressGeneratorPasswordNumberChoice.trim().parse().unwrap();
     let mut rng = rand::thread_rng();
     println!();
         
     // BTCADDRESSGEN - ADDRESS TYPE
-    let characters_base58 = b"123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
+    let CharactersBase58 = b"123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz";
     let characters_bech32 = b"qpzry9x8gf2tvdw0s3jn54khce6mua7l";
     println!("[ CONSOLE ]: what type do you wanna use? 1 = Legacy (P2PKH), 2 = P2SH, 3 = Bech32 (P2WPKH), 4 = Bech32 (P2WSH), 5 = Bech32m (Taproot)");
     println!();
@@ -157,12 +156,12 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - LEGACY (P2PKH)
     if user_bitcoin_type_choice_f == 1 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoice_f {
+        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
             print!("[ OUTPUT ]: ");
             print!("1");
             let random_adddres_base58: String = (0..=34).map(|_| {
-                let idx = rng.gen_range(0..characters_base58.len());
-                characters_base58[idx] as char
+                let idx = rng.gen_range(0..CharactersBase58.len());
+                CharactersBase58[idx] as char
             })
             .collect();
             println!("{}", random_adddres_base58);
@@ -171,12 +170,12 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - P2SH
     if user_bitcoin_type_choice_f == 2 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoice_f {
+        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
             print!("[ OUTPUT ]: ");
             print!("3");
             let random_adddres_base58: String = (0..=34).map(|_| {
-                let idx = rng.gen_range(0..characters_base58.len());
-                characters_base58[idx] as char
+                let idx = rng.gen_range(0..CharactersBase58.len());
+                CharactersBase58[idx] as char
             })
             .collect();
             println!("{}", random_adddres_base58);
@@ -185,7 +184,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32 (P2WPKH)
     if user_bitcoin_type_choice_f == 3 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoice_f {
+        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
             print!("[ OUTPUT ]: ");
             print!("bc1");
             let random_adddres_bech32: String = (0..=39).map(|_| {
@@ -199,7 +198,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32 (P2WSH)
     if user_bitcoin_type_choice_f == 4 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoice_f {
+        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
             print!("[ OUTPUT ]: ");
             print!("bc1");
             let random_adddres_bech32: String = (0..=59).map(|_| {
@@ -213,7 +212,7 @@ fn BitcoinAddressGenerator() {
         
     // BTCADDRESSGEN - BECH32M (TAPROOT)
     if user_bitcoin_type_choice_f == 5 {
-        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoice_f {
+        for _i in 0..UserBitcoinAddressGeneratorPasswordNumberChoiceF {
             print!("[ OUTPUT ]: ");
             print!("bc1p");
             let random_adddres_bech32: String = (0..=58).map(|_| {
