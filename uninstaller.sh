@@ -5,4 +5,4 @@ sudo rm /usr/bin/nmap16.sh
 sudo rm /usr/bin/nmap24.sh
 sudo rm /usr/bin/pacman.sh
 sudo rm /usr/bin/devclient
-echo DevClient successfully uninstalled
+echo run devclient to see deletion completition
