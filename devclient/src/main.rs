@@ -65,6 +65,7 @@ fn main() {
 }
 
 fn passgen() {
+    
     // PASSGEN - TYPE OF PASSWORDS
     println!("[ CONSOLE ]: what type of passwords do you want to generate? 1 = numbers only, 2 = letters only, 3 = numbers and letters");
     println!();
@@ -135,6 +136,7 @@ fn passgen() {
 }
 
 fn btcadressgen() {
+    
     // BTCADDRESSGEN - NUMBER OF ADDRESSES
     println!("[ CONSOLE ]: how many adresses do you want to generate?");
     println!();
@@ -242,6 +244,7 @@ fn cardnumbergen() {
     io::stdin().read_line(&mut cardnumbergen_number_of_cards).expect("failed to read line");
     let cardnumbergen_number_of_cards_f:i32 = cardnumbergen_number_of_cards.trim().parse().unwrap();
     println!();
+    
     if user_card_type_f == 1 {
         for _i in 0..cardnumbergen_number_of_cards_f {
             
@@ -264,6 +267,7 @@ fn cardnumbergen() {
             println!("[ OUTPUT ]: --------------------------------");
         }
     }
+    
     else if user_card_type_f == 2 {
         for _i in 0..cardnumbergen_number_of_cards_f {
                 
@@ -286,6 +290,7 @@ fn cardnumbergen() {
             println!("[ OUTPUT ]: --------------------------------");
         }
     }
+    
     else if user_card_type_f == 3 {
         for _i in 0..cardnumbergen_number_of_cards_f {
                 
@@ -310,6 +315,7 @@ fn cardnumbergen() {
 }
 
 fn nmap() {
+    
     // NMAP - PORT
     println!("[ CONSOLE ]: select port: 1 = 24, 2 = 16 (the port 16 takes longer to scan than the port 24");
     println!();
@@ -352,6 +358,7 @@ fn nmap() {
 }
 
 fn sysinfo() {
+    
     let mut sh = Command::new("sh");
     sh.arg("fastfetch.sh");
     match sh.output() {
@@ -367,6 +374,7 @@ fn sysinfo() {
 }
 
 fn pacupd () {
+    
     // PACKAGE UPDATER - PACKAGE MANAGER
     println!("select package manager: 1 = apt, 2 = dnf, 3 = pacman");
     println!();
