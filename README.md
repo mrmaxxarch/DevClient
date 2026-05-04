@@ -49,3 +49,4 @@ changelog: Hclient Rust Version is now under development.
                 (in development) fixed warranty headers than were not compliant to the GNU/GPL license
                 clarified prompts
                 planning to do other stuff not just this...
+                big changes will be made on summer, the project is in halt for now
